@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Thu Jun 11 14:33:28 GMT-03:00 2026:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-019e-b7be-fc53-0000073da848 
+on database directory A:\UNI 2026\Orientacion Objetos II\EntornoEclipseObjetosII\ObjetosII_TP7_Proxy_y_Fachada\proxy_personas with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@14dad5dc 
+Loaded from file:/C:/Users/matia/.m2/repository/org/apache/derby/derby/10.17.1.0/derby-10.17.1.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=25.0.2+10-LTS-69
+user.dir=A:\UNI 2026\Orientacion Objetos II\EntornoEclipseObjetosII\ObjetosII_TP7_Proxy_y_Fachada
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
