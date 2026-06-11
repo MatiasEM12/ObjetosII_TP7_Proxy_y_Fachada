@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class FileAccess {
+public class FileAccess implements Archivo{
 
     private String ruta;
     private String nombreArchivo;
@@ -14,6 +14,7 @@ public class FileAccess {
         this.nombreArchivo = nombre;
     }
 
+    @Override
     public String readFile() throws IOException {
         return Files.readString(Paths.get(this.ruta + "/" + this.nombreArchivo));
     }
