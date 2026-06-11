@@ -13,20 +13,26 @@ public class PersonaDao {
         }
     }
     public Persona personaPorId(int id) {
-        String sql = "select p.nombre,t.numero "
-                + "from personas p, telefonos t "
-                + "where p.id = t.idpersona and p.id = ?";
-        try (Connection conn = obtenerConexion();
-             PreparedStatement statement = conn.prepareStatement(sql);) {
-            statement.setInt(1, id);
-            ResultSet result = statement.executeQuery();
-            Set<Telefono> telefonos = new HashSet<Telefono>();
-            String nombrePersona = null;
-            while (result.next()) {
-                nombrePersona = result.getString(1);
-                telefonos.add(new Telefono(result.getString(2)));
+        String sql = "SELECT nombre FROM personas WHERE id = ?";
+        try(Connection conn = obtenerConexion();
+            PreparedStatement st = conn.prepareStatement(sql)) {
+
+            st.setInt(1, id);
+
+            ResultSet rs = st.executeQuery();
+
+            if(rs.next()) {
+                String nombre = rs.getString("nombre");
+
+                return new Persona(
+                        id,
+                        nombre,
+                        new TelefonosProxy(id)
+                );
             }
-            return new Persona(id, nombrePersona, telefonos);
+
+            return null;
+
         } catch(SQLException e) {
             throw new RuntimeException(e);
         }
