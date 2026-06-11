@@ -32,8 +32,7 @@ public class FileAccessProxy implements Archivo {
 
         if(nombre.startsWith("m")) {
 
-            boolean autorizado = usuario.poseePermiso(Permiso.ADMIN)
-                    || usuario.poseePermiso(Permiso.INTERMEDIO);
+            boolean autorizado = usuario.poseePermiso(Permiso.ADMIN) || usuario.poseePermiso(Permiso.INTERMEDIO);
 
             if(!autorizado) {
                 throw new RuntimeException("Acceso denegado. Se requiere permiso ADMIN o INTERMEDIO");
