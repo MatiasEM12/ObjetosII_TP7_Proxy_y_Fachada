@@ -18,6 +18,10 @@ public class FileAccess implements Archivo{
     public String readFile() throws IOException {
         return Files.readString(Paths.get(this.ruta + "/" + this.nombreArchivo));
     }
+
+    public String nombre() {
+        return nombreArchivo;
+    }
 }
 
 
