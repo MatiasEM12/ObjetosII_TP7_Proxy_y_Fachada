@@ -18,6 +18,7 @@ public class ImageFile implements Image {
         image = load(path);
     }
 
+    @Override
     public void display() {
         ImageIcon icon = new ImageIcon(image);
         JLabel label = new JLabel(icon);
